@@ -1,9 +1,7 @@
 export const colors = {
-  darkViolet: '#2D2A54',
-  lightViolet: '#D7D8F0',
-
   white: '#fff',
-  typographyDark: '#2D2A54',
-  typographyLight: '#B8BBF0'
-  
+  greyDark: '#191919',
+  greyLight: '#6B6B6B',
+  yellow68: 'rgba(239, 188, 56, 0.68)',
+  yellowMain: '#FABA18',
 }

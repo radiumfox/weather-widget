@@ -7,10 +7,11 @@ const rootElem = document.getElementById('root');
 
 if(rootElem !== null) {
   const root = ReactDOM.createRoot(rootElem);
+  
   root.render(
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
   );
 }
 
