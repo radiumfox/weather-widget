@@ -1,40 +1,29 @@
-import styledComponents from './styledComponents';
+import styles from './styles';
 
-export default function Widget(props:{
+interface WidgetProps {
   current: string;
   location: string;
   date: string;
   descr: string;
-  min: string;
-  max: string;
-}) {
-  const {
-    Container,
-    TemperatureWrapper,
-    TextContainer,
-    BgContainer,
-    Title,
-    Descr,
-    Temperature,
-    Location
-  
-  } = styledComponents;
+  minMax: string;
+}
+
+export default function Widget({current, location, date, descr, minMax}: WidgetProps) {
+  const widgetStyles = styles();
   return (
-    <Container>
-      <BgContainer>
-        <TemperatureWrapper>
-          <Temperature>{props.current}</Temperature>
-          <Location>{props.location}</Location>
-        </TemperatureWrapper>
-      </BgContainer>
-      <TextContainer>
-        <Title>{props.date}</Title>
-        <Descr>
-          <p>{props.descr}</p>
-          <p>{props.min}/{props.max}</p>
-        </Descr>
-      </TextContainer>
-    </Container>
+    <div className={widgetStyles.container}>
+      <div className={widgetStyles.bgWrapper}>
+        <div className={widgetStyles.temp}>{current}</div>
+        <div className={widgetStyles.location}>{location}</div>
+      </div>
+      <div className={widgetStyles.textWrapper}>
+        <p className={widgetStyles.date}>{date}</p>
+        <div className={widgetStyles.descriptionWrapper}>
+          <p className={widgetStyles.description}>{descr}</p>
+          <p>{minMax}</p>
+        </div>
+      </div>
+    </div>
   );
 }
 
